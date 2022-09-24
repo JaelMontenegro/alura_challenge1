@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <style>
+        html {
+            min-height: 100%;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+        
+
+        body {
+            margin: 0;
+            margin-bottom: 150px;
+            background-color: black;
+
+            background-size: 110%;
+            background-image: url(https://camiper.com/tiempominero-noticias-en-mineria-para-el-peru-y-el-mundo/wp-content/uploads/2019/10/La-Ciberseguridad-debe-ser-un-pilar-de-la-industria-Minera.jpg)
+        }
+
+
+        header {
+            padding: 5px;
+            margin: 5px;
+            color: white;
+        }
+
+        .h1-titulo {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        button {
+            margin: 10px;
+            border-radius: 12px;
+            min-height: 50px;
+            min-width: 160px;
+            background-color: #04AA6D;
+            border: 4px;
+            color: white;
+            font-size: 18px;
+            font-weight: 300;
+            border-width: 4px;
+            border: solid;
+
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.904);
+        }
+
+        .button-copiar {
+            background-color: #05aa6e;
+            border-color: #058657;
+        }
+
+        .button-copiar:hover {
+            background-color: #058657;
+        }
+
+        button:active {
+            transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.904);
+            /* Lowering the shadow */
+        }
+
+        .button-encriptar {
+            background-color: #004a7a;
+            border-color: #002e4d;
+        }
+
+        .button-encriptar:hover {
+            background-color: #002e4d;
+        }
+
+        .button-desencriptar {
+            background-color: #e44009;
+            border-color: #ad3006;
+        }
+
+        .button-desencriptar:hover {
+            background-color: #ad3006;
+        }
+
+        .div-prinicpal {
+            display: flex;
+            align-items: flex-start;
+            padding: auto;
+
+        }
+
+        .div-prinicpal-derecho {
+            padding: 10px 10px 10px 10px;
+            width: 60%;
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        .div-prinicpal-izquierdo {
+            padding: 10px 10px 10px 10px;
+            width: 40%;
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 20px;
+
+            text-align: center;
+        }
+
+        .textarea-texto {
+            appearance: none;
+            border-radius: 16px;
+            border-style: solid;
+            border-color: #7f0804;
+            border-width: 0px;
+            box-sizing: border-box;
+            appearance: none;
+            resize: none;
+            font-size: 18px;
+            width: 100%;
+            box-shadow: 3px 2px 40px 1px rgba(0, 0, 0, 0.904);
+            padding: 8px 16px;
+            margin-bottom: 25px;
+        }
+
+        .textarea-texto:focus {
+            transform: scale(1.02);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.904);
+            /* Lowering the shadow */
+        }
+
+        .textarea-texto-entrada {
+            background-color: rgb(217, 230, 222);
+            min-height: 300px;
+        }
+
+        .textarea-texto-salida {
+            background-color: #c1ddff;
+            display: flex;
+            min-height: 300px;
+        }
+
+        .footer-wrapper {
+            max-width: var(--wrapper-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .go-top {
+            display: block;
+            flex: 0 0 32px;
+            line-height: 32px;
+            margin: 2rem auto;
+            text-decoration: none;
+            background: var(--enlightment-color);
+            border-radius: 50%;
+            text-align: center;
+            color: rgb(3, 2, 2);
+            background-color: white;
+        }
+
+        .material-icons {
+            padding: 10px;
+            font-size: 40px;
+            width: 40px;
+            text-decoration: none;
+        }
+
+        li {
+            display: inline;
+            margin-left: 0px;
+        }
+
+        ul {
+            padding-inline-start: 0px;
+            margin-top: 0px;
+        }
+
+        footer {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            color: white;
+        }
+
+        #social {
+            flex: 0 0 100%;
+        }
+
+        .nav-social {
+
+            text-align: center;
+
+        }
+
+        #social-sidebar {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 1.875em;
+            list-style: none;
+            width: 100%;
+        }
+
+        .android {
+            color: white;
+        }
+
+        .facebook {
+            color: white;
+        }
+    </style>
+    <script>
+
+        function encriptar(mensaje) {
+            
+            var mensajeEncriptado = mensaje.replaceAll('e', 'enter')
+            mensajeEncriptado = mensajeEncriptado.replaceAll('o', 'ober')
+            mensajeEncriptado = mensajeEncriptado.replaceAll('i', 'imes')
+            mensajeEncriptado = mensajeEncriptado.replaceAll('a', 'ai')
+            mensajeEncriptado = mensajeEncriptado.replaceAll('u', 'ufat')
+
+            return mensajeEncriptado
+        }
+
+        function desencriptar(mensaje) {
+            
+            var mensajeDesencriptado = mensaje.replaceAll('ai', 'a')
+            mensajeDesencriptado = mensajeDesencriptado.replaceAll('ober', 'o')
+            mensajeDesencriptado = mensajeDesencriptado.replaceAll('enter', 'e')
+            mensajeDesencriptado = mensajeDesencriptado.replaceAll('imes', 'i')
+            mensajeDesencriptado = mensajeDesencriptado.replaceAll('ufat', 'u')
+            return mensajeDesencriptado
+
+        }
+        
+        function onclikEncriptar() {
+            console.info("Hola")
+            let textoEntrada = document.getElementById("texto-entrada").value;
+            textoEntrada = encriptar(textoEntrada)
+            
+
+            document.getElementById("texto-salida").innerHTML = textoEntrada;
+        }
+        function onclikDesencriptar() {
+            let textoEntrada = document.getElementById("texto-entrada").value;
+            textoEntrada = desencriptar(textoEntrada)
+
+            document.getElementById("texto-salida").innerHTML = textoEntrada;
+        }
+        function onclikCopiar() {
+            var codigoACopiar = document.getElementById('texto-salida');
+            navigator.clipboard.writeText(codigoACopiar.innerHTML)
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="h1-titulo notranslate">Encripto</h1>
+    </header>
+    <!-- <nav>
+        <a href="http://dominio.com/seccion2.html">IR SECCIÓN 2</a>
+        <a href="http://dominio.com/seccion2.html">IR SECCIÓN 3</a>
+    </nav> -->
+    <section>
+        <div class="div-prinicpal">
+            <div class="div-prinicpal-derecho ">
+                <textarea aria-invalid="false" class="textarea-texto-entrada textarea-texto" type="text" name=""
+                    id="texto-entrada" placeholder="Inserta un texto."></textarea>
+                <div>
+                    
+                    <button onclick="onclikEncriptar()" class="button-encriptar">Encriptar</button>
+                    
+                    <button onclick="onclikDesencriptar()" class="button-desencriptar">Desencriptar</button>
+                </div>
+
+            </div>
+            <div class="div-prinicpal-izquierdo">
+                <textarea class="textarea-texto-salida textarea-texto" type="text" name="" id="texto-salida"
+                    readonly="true" placeholder="No tienes algun resultado que mostrar."></textarea>
+                <div>
+
+                    <button onclick="onclikCopiar()" class="button-copiar">Copiar</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-wrapper">
+            <iconify-icon class="go-top" icon="bi:arrow-down-circle-fill" href="#top" width="40" height="40" flip="vertical"></iconify-icon>
+            
+
+        </div>
+        <nav class="nav-social">
+            <ul class="social-sidebar">
+                
+                <li>
+                    <a href="https://linkedin.com" target="_blank">
+                        <iconify-icon icon="mdi:linkedin" width="40" height="40"></iconify-icon>
+                    </a>
+                        
+                </li>
+                <li>
+                    <a href="https://github.com" target="_blank">
+
+                        <iconify-icon icon="fa:github" width="40" height="40"></iconify-icon>
+                    </a>
+                </li>
+                <li >
+                    <a href="mailto:jael.reyes8@gamil.com">
+
+                        <iconify-icon icon="fluent:mail-16-filled"  width="40" height="40"></iconify-icon>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
